@@ -7,13 +7,12 @@ on:
 
 jobs:
   build:
-    name: Dev Container - Build image
+    name: Build image
     runs-on: ubuntu-latest
     steps:
-      - name: Pre-build image and run make ci-build in dev container
+      - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
           imageName: ghcr.io/example/example-devcontainer
           cacheFrom: ghcr.io/example/example-devcontainer
           push: always
-          runCmd: make ci-build
